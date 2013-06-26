@@ -6,11 +6,11 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 ?>
 
-<article>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header>
 		<hgroup>

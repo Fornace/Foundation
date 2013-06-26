@@ -6,7 +6,7 @@
  *
  * @package WordPress
  * @subpackage Foundation, for WordPress
- * @since Foundation, for WordPress 1.0
+ * @since Foundation, for WordPress 4.0
  */
 ?>
 
@@ -16,11 +16,11 @@
 <!-- Footer -->
 <footer class="row">
 
-<?php if ( dynamic_sidebar('Sidebar Footer One') && dynamic_sidebar('Sidebar Footer Two') && dynamic_sidebar('Sidebar Footer Three') && dynamic_sidebar('Sidebar Footer Four')  ) : else : ?>
+<?php if ( dynamic_sidebar('Sidebar Footer One') || dynamic_sidebar('Sidebar Footer Two') || dynamic_sidebar('Sidebar Footer Three') || dynamic_sidebar('Sidebar Footer Four')  ) : else : ?>
 
 <div class="large-12 columns">
-	<ul class="link-list">
-		<?php wp_list_bookmarks('categorize=0&title_li='); ?>
+	<ul class="inline-list">
+	<?php wp_list_pages('title_li='); ?>
 	</ul>
 </div>
 
@@ -30,5 +30,6 @@
 <!-- End Footer -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
