@@ -13,6 +13,10 @@
 /**
  * Initiate Foundation, for WordPress
  */
+if ( !function_exists( 'optionsframework_init' ) ) {
+	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/options/' );
+	require_once dirname( __FILE__ ) . '/options/options-framework.php';
+}
 
 if ( ! function_exists( 'foundation_setup' ) ) :
 
@@ -28,7 +32,7 @@ function foundation_setup() {
 	add_editor_style();
 
 	// Support for Featured Images
-	add_theme_support( 'post-thumbnails' ); 
+	add_theme_support( 'post-thumbnails' );
 
 	// Automatic Feed Links & Post Formats
 	add_theme_support( 'automatic-feed-links' );
@@ -63,7 +67,7 @@ function foundation_assets() {
 
 	if (!is_admin()) {
 
-		/** 
+		/**
 		 * Deregister jQuery in favour of ZeptoJS
 		 * jQuery will be used as a fallback if ZeptoJS is not compatible
 		 * @see foundation_compatibility & http://foundation.zurb.com/docs/javascript.html
@@ -82,7 +86,7 @@ function foundation_assets() {
 
 		// Load Google Fonts API
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300' );
-	
+
 	}
 
 }
@@ -141,7 +145,7 @@ function foundation_menus() {
 			'header-menu' => __( 'Header Menu', 'foundation' )
 		)
 	);
-	
+
 }
 
 add_action( 'init', 'foundation_menus' );
@@ -336,7 +340,7 @@ add_filter('get_the_excerpt', 'foundation_excerpt');
 
 endif;
 
-/** 
+/**
  * Comments Template
  */
 
@@ -447,5 +451,24 @@ $foundation_shortcodes = trailingslashit( get_template_directory() ) . 'inc/shor
 if (file_exists($foundation_shortcodes)) {
 	require( $foundation_shortcodes );
 }
+add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
 
+function optionsframework_custom_scripts() { ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+	jQuery('#example_showhidden').click(function() {
+  		jQuery('#section-example_text_hidden').fadeToggle(400);
+	});
+
+	if (jQuery('#example_showhidden:checked').val() !== undefined) {
+		jQuery('#section-example_text_hidden').show();
+	}
+
+});
+</script>
+
+<?php
+}
 ?>
