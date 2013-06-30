@@ -4,7 +4,11 @@
  * @subpackage furnace
  * The Main functions.php file for "Furnace".
  */
-require_once dirname(__FILE__) . '/includes/init.php';
+if (!defined('FURNACE_INCLUDE')) {
+    define('FURNACE_INCLUDE', get_template_directory() . '/includes');
+}
+require_once FURNACE_INCLUDE . '/init.php';
+
 if (!function_exists('furnace_setup')) :
 
     function furnace_setup()
