@@ -4,17 +4,17 @@
  */
 
 
-$loop = furnaceLoop();
+$loop = furnaceLoop(apply_filters('fs_loop_args', 'posts_per_page=1'));
 
 if ($loop->have_posts()) :
-echo apply_filters('fs_content_wrap_start', '<div>');
     while ($loop->have_posts()) : $loop->the_post(); ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <?php the_content(); ?>
+            <header>
+                <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+            </header>
 
         </article>
 
     <?php endwhile;
-echo apply_filters('fs_content_wrap_end', '</div>');
 endif;
 ?>

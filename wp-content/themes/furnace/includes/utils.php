@@ -27,3 +27,8 @@ function furnaceLoop()
 
     return $loop;
 }
+
+function fsGetImages()
+{
+    global $post;
+}
