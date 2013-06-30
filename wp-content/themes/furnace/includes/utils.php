@@ -17,8 +17,6 @@ function furnaceLoop()
     if (func_num_args() > 0)
     {
         $params = wp_parse_args($args[0], $params);
-
-        var_dump($params);
         $loop = new WP_Query($params);
     }
     else {
