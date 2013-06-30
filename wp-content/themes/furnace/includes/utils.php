@@ -7,7 +7,7 @@
 function furnaceLoop()
 {
     global $query_string, $wp_query;
-
+    $temp = $wp_query;
     $paged = (get_query_var('paged')) ? get_query_var('paged') : (get_query_var('page')) ? get_query_var('page') : 1;
 
     $args = func_get_args();
@@ -19,8 +19,10 @@ function furnaceLoop()
         $params = wp_parse_args($args[0], $params);
         $loop = new WP_Query($params);
     }
-    else {
-        $loop = new WP_Query();
+    else
+    {
+        $wp_query = $temp;
+        $loop = $wp_query;
     }
 
     return $loop;
