@@ -4,6 +4,7 @@
  * @param string|array
  * @return null basically it publishes content besed on queried object
  */
+
 function furnaceLoop()
 {
     global $query_string, $wp_query;
