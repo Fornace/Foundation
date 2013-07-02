@@ -35,10 +35,11 @@ function furnaceLoop()
  */
 function fsGetImages($size = 'thumbnail')
 {
+    global $post;
     $result = array();
 
     if($images = get_children(array(
-        'post_parent'    => get_the_ID(),
+        'post_parent'    => $post->ID,
         'post_type'      => 'attachment',
         'numberposts'    => -1, // show all
         'post_status'    => null,
@@ -86,7 +87,8 @@ function fsThumnail($size)
     return $thumb;
 }
 
-function fsWPMeta()
+function fsWPMeta($post_id)
 {
-    global $post;
+
+    get
 }
