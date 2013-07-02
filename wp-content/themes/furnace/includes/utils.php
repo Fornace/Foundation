@@ -2,7 +2,7 @@
 /**
  * furnaceLoop guess based loop function with custom hooks to modify stages.
  * @param string|array
- * @return null basically it publishes content besed on queried object
+ * @return null [basically it publishes content besed on queried object]
  */
 
 function furnaceLoop()
@@ -28,7 +28,11 @@ function furnaceLoop()
 
     return $loop;
 }
-
+/**
+ * Retrieves useful information about post attachment images
+ * @param  string $size [Optional "size" of attachment image such as, 'thumbnail', 'medium', 'full'. Default to 'thumbnail']
+ * @return array|FALSE       [Returns array on success or FALSE if there is no image from the post]
+ */
 function fsGetImages($size = 'thumbnail')
 {
     $result = array();
@@ -39,15 +43,24 @@ function fsGetImages($size = 'thumbnail')
         'numberposts'    => -1, // show all
         'post_status'    => null,
         'post_mime_type' => 'image',
-    ))) {
-        foreach ($images as $key => $image) {
-            $result[$k]['attimg'] = wp_get_attachment_image($image->ID, $size);
-            $result[$k]['atturl'] = wp_get_attachment_url($image->ID);
-            $result[$k]['attlink'] = wp_get_attachment_link($image->ID);
+    )))
+    {
+
+        foreach ($images as $key => $image)
+        {
+            $result[$k]['att_img'] = wp_get_attachment_image($image->ID, $size);
+            $result[$k]['att_url'] = wp_get_attachment_url($image->ID);
+            $result[$k]['att_link'] = wp_get_attachment_link($image->ID);
             $result[$k]['postlink'] = get_permalink($image->post_parent);
-            $result[$k]['atttitle'] = apply_filters('the_title', $image->post_title);
-            $result[$k]['attdesc'] = apply_filters('the_content', $image->post_content);
+            $result[$k]['att_title'] = apply_filters('the_title', $image->post_title);
+            $result[$k]['att_desc'] = apply_filters('the_content', $image->post_content);
+            $result[$k]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
         }
+        $result['first_image'] = $result[0];
+
+        return $result;
     }
+
+    return FALSE;
 
 }
