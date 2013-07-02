@@ -64,3 +64,23 @@ function fsGetImages($size = 'thumbnail')
     return FALSE;
 
 }
+
+function fsThumnail($size)
+{
+    global $post;
+
+    if (has_post_thumbnail($post->ID))
+    {
+        $thumb = get_the_post_thumbnail($post->ID, $size);
+    }
+    else
+    {
+        if(function_exists('fsGetImages'))
+        {
+            $images = fsGetImages($size);
+            $thumb = ($images) ? $images['first_image']: FALSE;
+        }
+    }
+
+    return $thumb;
+}
