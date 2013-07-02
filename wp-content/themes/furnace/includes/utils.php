@@ -29,14 +29,25 @@ function furnaceLoop()
     return $loop;
 }
 
-function fsGetImages()
+function fsGetImages($size = 'thumbnail')
 {
-    global $post;
+    $result = array();
 
-    $images = new stdClass();
+    if($images = get_children(array(
+        'post_parent'    => get_the_ID(),
+        'post_type'      => 'attachment',
+        'numberposts'    => -1, // show all
+        'post_status'    => null,
+        'post_mime_type' => 'image',
+    ))) {
+        foreach ($images as $key => $image) {
+            $result[$k]['attimg'] = wp_get_attachment_image($image->ID, $size);
+            $result[$k]['atturl'] = wp_get_attachment_url($image->ID);
+            $result[$k]['attlink'] = wp_get_attachment_link($image->ID);
+            $result[$k]['postlink'] = get_permalink($image->post_parent);
+            $result[$k]['atttitle'] = apply_filters('the_title', $image->post_title);
+            $result[$k]['attdesc'] = apply_filters('the_content', $image->post_content);
+        }
+    }
 
-    $args = array(
-        'post_id' => $post->ID;
-
-        );
 }
