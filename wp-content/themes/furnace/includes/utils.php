@@ -89,6 +89,8 @@ function fsThumnail($size)
 
 function fsWPMeta($post_id)
 {
+    if ($post_id)
+    {
 
-    get
+    }
 }
