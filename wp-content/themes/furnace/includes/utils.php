@@ -78,7 +78,7 @@ function fsThumnail($size)
         if(function_exists('fsGetImages'))
         {
             $images = fsGetImages($size);
-            $thumb = ($images) ? $images['first_image']: FALSE;
+            $thumb = ($images) ? $images['first_image']['att_img'] : FALSE;
         }
     }
 
