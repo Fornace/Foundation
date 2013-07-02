@@ -35,5 +35,8 @@ function fsGetImages()
 
     $images = new stdClass();
 
+    $args = array(
+        'post_id' => $post->ID;
 
+        );
 }
