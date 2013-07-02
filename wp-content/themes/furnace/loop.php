@@ -4,7 +4,7 @@
  */
 
 
-$loop = furnaceLoop(apply_filters('fs_loop_args', NULL));
+$loop = furnaceLoop(apply_filters('fs_loop_default_args', NULL));
 
 if ($loop->have_posts()) :
     while ($loop->have_posts()) : $loop->the_post(); ?>

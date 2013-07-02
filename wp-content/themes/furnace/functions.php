@@ -41,7 +41,7 @@ function furnace_manage_assets()
 add_action('wp_enqueue_scripts', 'furnace_manage_assets');
 endif;
 
-add_filter('fs_loop_args', function(){
+add_filter('fs_loop_default_args', function(){
     return array(
         'posts_per_page' => 1,
         );

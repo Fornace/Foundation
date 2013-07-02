@@ -32,4 +32,8 @@ function furnaceLoop()
 function fsGetImages()
 {
     global $post;
+
+    $images = new stdClass();
+
+
 }
