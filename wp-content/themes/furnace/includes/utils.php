@@ -56,6 +56,7 @@ function fsGetImages($size = 'thumbnail')
             $result[$k]['att_desc'] = apply_filters('the_content', $image->post_content);
             $result[$k]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
         }
+
         $result['first_image'] = $result[0];
 
         return $result;
@@ -83,4 +84,9 @@ function fsThumnail($size)
     }
 
     return $thumb;
+}
+
+function fsWPMeta()
+{
+    global $post;
 }
