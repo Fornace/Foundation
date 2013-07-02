@@ -69,7 +69,7 @@ function fsThumnail($size)
 {
     global $post;
 
-    if (has_post_thumbnail($post->ID))
+    if ('' !== get_the_post_thumbnail($post->ID))
     {
         $thumb = get_the_post_thumbnail($post->ID, $size);
     }
