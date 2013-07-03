@@ -60,4 +60,25 @@ function fsRegisterSidebars()
         );
 }
 
+add_action('widgets_init', 'fsRegisterSidebars');
+
+endif;
+
+if (! function_exists('fsRegisterMenus')) :
+
+function fsRegisterMenus()
+{
+    register_nav_menus(
+        array(
+        'navigation_main'       => 'Main Navigation Menu',
+        'navigation_mobile'     => 'Mobile Navigation Menu',
+        'navigation_secondary'  => 'Secondary Navigation Menu',
+        'navigation_quick'      => 'Quick Navigation Menu',
+        'navigation_footer'     => 'Footer Navigation Menu'
+        )
+    );
+}
+
+add_action('init', 'fsRegisterMenus');
+
 endif;
