@@ -28,3 +28,36 @@ function fsManageAssets()
 }
 add_action('wp_enqueue_scripts', 'fsManageAssets');
 endif;
+
+if (!function_exists('fsRegisterSidebars')) :
+
+function fsRegisterSidebars()
+{
+    register_sidebar(
+        array(
+            'id'            => 'furnace_sidebar_main',
+            'name'          => __('Sidebar Main', 'furnace'),
+            'class'         => '',
+            'description'   => __('Main Sidebar of the site', 'furnace'),
+            'before_widget' => '<div id = "%1$s" class= "widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widgettitle">',
+            'after_title'   => '</h2>'
+        )
+    );
+
+    register_sidebar(
+            array(
+                'name'          => __('Sidebar Left', 'furnace'),
+                'id'            => 'furnace_sidebar_left',
+                'class'         => '',
+                'description'   => __('Left Sidebar of the site', 'furnace'),
+                'before_widget' => '<div id = "%1$s" class= "widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2 class="widgettitle">',
+                'after_title'   => '</h2>'
+            )
+        );
+}
+
+endif;

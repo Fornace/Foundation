@@ -31,5 +31,4 @@
 <header>
 
 </header>
-<section id="main"></section>
-<footer></footer>
+<section id="main">
