@@ -26,4 +26,10 @@
 <![endif]-->
 <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>
+<body <?php body_class(); ?>>
+
+<header>
+
+</header>
+<section id="main"></section>
+<footer></footer>
