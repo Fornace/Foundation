@@ -67,7 +67,7 @@ function fsGetImages($size = 'thumbnail')
 
 }
 
-function fsThumnail($size)
+function fsThumnail($size='thumbnail')
 {
     global $post;
 

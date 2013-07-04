@@ -12,6 +12,11 @@
                 <?php endif; ?>
                 <p><small><?php wp_meta(); ?></small></p>
             </header>
+            <figure>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
+                    <?php fsThumnail(); ?>
+                </a>
+            </figure>
             <section>
                 <?php the_content(); ?>
             </section>
