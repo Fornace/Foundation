@@ -14,7 +14,7 @@
             </header>
             <figure>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
-                    <?php fsThumnail(); ?>
+                    <?php echo fsThumnail(); ?>
                 </a>
             </figure>
             <section>
