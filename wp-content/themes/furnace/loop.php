@@ -15,7 +15,7 @@
             <figure>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
                     <?php
-                        $thumb = fsThumbnail('');
+                        $thumb = fsThumbnail();
                         echo $thumb['thumb_img'];
                      ?>
                 </a>
