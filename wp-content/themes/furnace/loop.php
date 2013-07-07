@@ -15,16 +15,12 @@
             <figure>
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
                     <?php
-                        $thumb = fsThumbnail();
-                        var_dump($thumb);
-                        if ($thumb)
-                        {
-                            echo $thumb['thumb_img'];
-                        }
+                        $thumb = fsThumbnail('');
+                        echo $thumb['thumb_img'];
                      ?>
                 </a>
                 <figcaption>
-                    <?php echo $thumb['thumb_url']; ?>
+                    <?php echo $thumb['thumb_title']; ?>
                 </figcaption>
             </figure>
             <section>

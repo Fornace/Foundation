@@ -33,13 +33,13 @@ function furnaceLoop()
  * @param  string $size [Optional "size" of attachment image such as, 'thumbnail', 'medium', 'full'. Default to 'thumbnail']
  * @return array|FALSE       [Returns array on success or FALSE if there is no image from the post]
  */
-function fsGetImages($size = 'thumbnail')
+function fsGetImages($size = 'thumbnail', $post_id = NULL)
 {
-    global $post;
+    $post_id = (NULL === $post_id) ? get_the_ID() : $post_id;
     $result = array();
 
-    if($images = get_children(array(
-        'post_parent'    => $post->ID,
+    if($images = get_posts(array(
+        'post_parent'    => $post_id,
         'post_type'      => 'attachment',
         'numberposts'    => -1, // show all
         'post_status'    => null,
@@ -49,9 +49,10 @@ function fsGetImages($size = 'thumbnail')
 
         foreach ($images as $key => $image)
         {
-            if ($image->ID === get_post_thumbnail_id($post->ID))
+
+            if ($image->ID === (int) get_post_thumbnail_id($post_id))
             {
-                $result['thumb']['thumb_img'] = get_the_post_thumbnail($post->ID);
+                $result['thumb']['thumb_img'] = get_the_post_thumbnail($post_id, $size);
                 $result['thumb']['thumb_url'] = wp_get_attachment_url($image->ID);
                 $result['thumb']['thumb_link'] = wp_get_attachment_link($image->ID);
                 $result['thumb']['thumb_postlink'] = get_permalink($image->post_parent);
@@ -61,13 +62,13 @@ function fsGetImages($size = 'thumbnail')
             }
             else
             {
-                $result[]['att_img'] = wp_get_attachment_image($image->ID, $size);
-                $result[]['att_url'] = wp_get_attachment_url($image->ID);
-                $result[]['att_link'] = wp_get_attachment_link($image->ID);
-                $result[]['postlink'] = get_permalink($image->post_parent);
-                $result[]['att_title'] = apply_filters('the_title', $image->post_title);
-                $result[]['att_desc'] = apply_filters('the_content', $image->post_content);
-                $result[]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
+                $result[$key]['att_img'] = wp_get_attachment_image($image->ID, $size);
+                $result[$key]['att_url'] = wp_get_attachment_url($image->ID);
+                $result[$key]['att_link'] = wp_get_attachment_link($image->ID);
+                $result[$key]['postlink'] = get_permalink($image->post_parent);
+                $result[$key]['att_title'] = apply_filters('the_title', $image->post_title);
+                $result[$key]['att_desc'] = apply_filters('the_content', $image->post_content);
+                $result[$key]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
             }
         }
 
@@ -86,11 +87,17 @@ function fsGetImages($size = 'thumbnail')
 
 }
 
-function fsThumbnail($size='thumbnail')
-{
-    global $post;
 
-    $images = fsGetImages($size);
+/**
+ * [fsThumbnail returns Post Thumbnail or (if no Thumbnail) first image of the post or FALSE on no images. It returns an array of information for the images on success.]
+ * @param  string $size    [Optional. image size to return]
+ * @param  [int] $post_id [Optional. if not specified returns images from the Current post]
+ * @return [array|false]          [Returns an array of image information alongwith the image itself on success or FALSE if fails to find out any image]
+ */
+function fsThumbnail($size='thumbnail', $post_id = NULL)
+{
+    $post_id = (NULL === $post_id) ? get_the_ID() : $post_id;
+    $images = fsGetImages($size, $post_id);
     $result = array();
     if (empty($images))
     {
@@ -109,19 +116,6 @@ function fsThumbnail($size='thumbnail')
         }
     return $result['thumbnail'];
     }
-
-   /* if ('' !== get_the_post_thumbnail($post->ID))
-    {
-        $thumb = get_the_post_thumbnail($post->ID, $size);
-    }
-    else
-    {
-        if(function_exists('fsGetImages'))
-        {
-            $images = fsGetImages($size);
-            $thumb = ($images) ? $images['first_image']['att_img'] : FALSE;
-        }
-    }*/
 }
 
 function fsWPMeta($post_id)
