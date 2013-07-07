@@ -10,7 +10,6 @@ if (!defined('FURNACE_INCLUDE')) {
 require_once FURNACE_INCLUDE . '/init.php';
 
 
-
 add_filter('fs_loop_default_args', function(){
     return array(
         'posts_per_page' => 1,

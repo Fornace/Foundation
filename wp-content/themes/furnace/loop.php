@@ -16,6 +16,9 @@
                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
                     <?php echo fsThumnail(); ?>
                 </a>
+                <figcaption>
+
+                </figcaption>
             </figure>
             <section>
                 <?php the_content(); ?>
