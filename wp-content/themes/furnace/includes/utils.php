@@ -49,16 +49,35 @@ function fsGetImages($size = 'thumbnail')
 
         foreach ($images as $key => $image)
         {
-            $result[$k]['att_img'] = wp_get_attachment_image($image->ID, $size);
-            $result[$k]['att_url'] = wp_get_attachment_url($image->ID);
-            $result[$k]['att_link'] = wp_get_attachment_link($image->ID);
-            $result[$k]['postlink'] = get_permalink($image->post_parent);
-            $result[$k]['att_title'] = apply_filters('the_title', $image->post_title);
-            $result[$k]['att_desc'] = apply_filters('the_content', $image->post_content);
-            $result[$k]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
+            if ($image->ID === get_post_thumbnail_id($post->ID))
+            {
+                $result['thumb']['thumb_img'] = get_the_post_thumbnail($post->ID);
+                $result['thumb']['thumb_url'] = wp_get_attachment_url($image->ID);
+                $result['thumb']['thumb_link'] = wp_get_attachment_link($image->ID);
+                $result['thumb']['thumb_postlink'] = get_permalink($image->post_parent);
+                $result['thumb']['thumb_title'] = apply_filters('the_title', $image->post_title);
+                $result['thumb']['thumb_desc'] = apply_filters('the_content', $image->post_content);
+                $result['thumb']['thumb_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
+            }
+            else
+            {
+                $result[]['att_img'] = wp_get_attachment_image($image->ID, $size);
+                $result[]['att_url'] = wp_get_attachment_url($image->ID);
+                $result[]['att_link'] = wp_get_attachment_link($image->ID);
+                $result[]['postlink'] = get_permalink($image->post_parent);
+                $result[]['att_title'] = apply_filters('the_title', $image->post_title);
+                $result[]['att_desc'] = apply_filters('the_content', $image->post_content);
+                $result[]['att_excerpt'] = apply_filters('the_excerpt', $image->post_excerpt);
+            }
         }
 
-        $result['first_image'] = $result[0];
+        $result['first_image']['thumb_img'] = $result[0]['att_img'];
+        $result['first_image']['thumb_url'] = $result[0]['att_url'];
+        $result['first_image']['thumb_link'] = $result[0]['att_link'];
+        $result['first_image']['thumb_postlink'] = $result[0]['postlink'];
+        $result['first_image']['thumb_title'] = $result[0]['att_title'];
+        $result['first_image']['thumb_desc'] = $result[0]['att_desc'];
+        $result['first_image']['thumb_excerpt'] = $result[0]['att_excerpt'];
 
         return $result;
     }
@@ -67,11 +86,31 @@ function fsGetImages($size = 'thumbnail')
 
 }
 
-function fsThumnail($size='thumbnail')
+function fsThumbnail($size='thumbnail')
 {
     global $post;
 
-    if ('' !== get_the_post_thumbnail($post->ID))
+    $images = fsGetImages($size);
+    $result = array();
+    if (empty($images))
+    {
+        return FALSE;
+    }
+    else
+    {
+
+        if (array_key_exists('thumb', $images))
+        {
+            $result['thumbnail'] = $images['thumb'];
+        }
+        else
+        {
+            $result['thumbnail'] = $images['first_image'];
+        }
+    return $result['thumbnail'];
+    }
+
+   /* if ('' !== get_the_post_thumbnail($post->ID))
     {
         $thumb = get_the_post_thumbnail($post->ID, $size);
     }
@@ -82,9 +121,7 @@ function fsThumnail($size='thumbnail')
             $images = fsGetImages($size);
             $thumb = ($images) ? $images['first_image']['att_img'] : FALSE;
         }
-    }
-
-    return $thumb;
+    }*/
 }
 
 function fsWPMeta($post_id)
