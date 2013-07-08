@@ -10,7 +10,7 @@
         <?php else:  ?>
             <h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
         <?php endif; ?>
-        <p>Written by <?php the_author_link(); ?> on <?php the_time(get_option('date_format')); ?> in <?php the_category(', '); ?></p>
+        <p>Written by <?php the_author_posts_link(); ?> on <?php the_time(get_option('date_format')); ?> in <?php the_category(', '); ?></p>
     </header>
     <figure>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="thumb_link">
