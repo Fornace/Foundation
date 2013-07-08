@@ -25,7 +25,7 @@
 	<?php endif; ?>
 
 	<?php the_excerpt(); ?>
-	
+
 	<hr>
 
 </article>
