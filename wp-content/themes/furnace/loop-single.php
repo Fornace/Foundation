@@ -28,6 +28,7 @@
         <h6><?php _e('Posted Under:', 'furnace' );?> <?php the_category(', '); ?></h6>
         <?php the_tags('<span">','</span><span>','</span>'); ?>
 
+        <?php get_template_part('author-box'); ?>
 
         <?php comments_template(); ?>
 
