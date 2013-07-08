@@ -125,3 +125,8 @@ function fsWPMeta($post_id)
 
     }
 }
+
+function fsPagination()
+{
+
+}
