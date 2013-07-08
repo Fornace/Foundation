@@ -22,10 +22,16 @@ get_header();
 
             <?php
             /* Start the Loop */
+            do_action('fs_before_cat_loop');
             while ( have_posts() ) : the_post();
                 get_template_part( 'loop', get_post_format() );
 
             endwhile;
+            do_action('fs_after_cat_loop');
+            if (function_exists('fsPagination'))
+            {
+                fsPagination();
+            }
             ?>
 
         <?php else : ?>
