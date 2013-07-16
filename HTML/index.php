@@ -10,7 +10,24 @@
 
     </head>
     <body>
-        <!-- HTML body goes here... -->
+        <!-- Header Section Starts -->
+        <header>
+
+        </header>
+        <!-- Header Section Ends -->
+
+        <!-- Main Content Section Starts -->
+        <section>
+
+        </section>
+        <!-- Main Content Section Endss -->
+
+        <!-- Footer Section Starts -->
+        <footer>
+
+        </footer>
+        <!-- Footer Section Ends -->
         <script type="text/javascript" src="assets/js/lib/jquery.js"></script>
+        <script type="text/javascript" src="assets/js/app/main.js"></script>
     </body>
 </html>
