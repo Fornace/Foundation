@@ -28,7 +28,9 @@
 </head>
 <body <?php body_class(); ?>>
 
-<header>
-
+<header id="header_main">
+    <hgroup>
+        <h1><a href="<?php echo esc_url(home_url('/'));?>"><?php bloginfo('name'); ?></a></h1>
+    </hgroup>
 </header>
 <section id="main">
