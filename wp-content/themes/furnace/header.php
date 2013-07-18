@@ -34,5 +34,6 @@
 
         <h6><?php bloginfo('description'); ?></h6>
     </hgroup>
+<?php get_search_form(); ?>
 </header>
 <section id="main">

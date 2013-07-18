@@ -7,6 +7,8 @@
  * @since 0.0.1
  */
 get_header();
+$vl = get_queried_object();
+var_dump($vl);
 ?>
 <section id="primary" class="site-content">
         <div id="content" role="main">
