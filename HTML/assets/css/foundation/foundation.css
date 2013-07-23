@@ -2968,6 +2968,13 @@ label.error {
   color: #c60f13;
 }
 
+/* line 18, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+form.flat {
+  background-color: #eeeeee;
+  -webkit-box-shadow: 2px 2px 2px #222222;
+  box-shadow: 2px 2px 2px #222222;
+}
+
 /* Button Groups */
 /* line 72, ../../scss/foundation/scss/foundation/components/_button-groups.scss */
 .button-group {

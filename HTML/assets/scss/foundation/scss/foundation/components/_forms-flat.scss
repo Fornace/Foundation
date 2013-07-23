@@ -1,0 +1,20 @@
+//
+// Flat Form Variables
+//
+$include-html-custom-form-classes: $include-html-classes !default;
+
+$input-bg-color-flat: #eee !default;
+$input-focus-bg-color-flat: #fff !default;
+$input-box-shadow-flat: 2px 2px 2px #222 !default;
+
+@mixin flat_form($transparent: false) {
+  background-color: $input-bg-color-flat;
+  @if $experimental {
+    -webkit-box-shadow: $input-box-shadow-flat;
+  }
+  box-shadow: $input-box-shadow-flat;
+}
+
+form.flat {
+  @include flat_form;
+}
