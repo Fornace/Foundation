@@ -108,7 +108,7 @@ $button-disabled-opacity: 0.6 !default;
 }
 
 // We use this mixin to add button color styles
-@mixin button-style($bg:$primary-color, $radius:false, $disabled:false) {
+@mixin button-style($bg:$primary-color, $radius:false, $disabled:false, $flat:false) {
 
   // We control which background styles are used,
   // these can be removed by setting $bg:false
@@ -144,6 +144,13 @@ $button-disabled-opacity: 0.6 !default;
     box-shadow: none;
     &:hover,
     &:focus { background-color: $bg; }
+  }
+
+  @if $flat {
+    @if $experimental {
+      -webkit-box-shadow: none;
+    }
+    box-shadow: none;
   }
 
   // We can control how much button radius us used.
@@ -184,6 +191,12 @@ $button-disabled-opacity: 0.6 !default;
 
     &.left-align  { text-align: left; text-indent: emCalc(12); }
     &.right-align { text-align: right; padding-right: emCalc(12); }
+
+    &.flat {
+      @include button-style($flat:true);
+
+      border: 0 none;
+    }
 
     &.disabled, &[disabled] { @include button-style($bg:$primary-color, $disabled:true);
       &.secondary { @include button-style($bg:$secondary-color, $disabled:true); }

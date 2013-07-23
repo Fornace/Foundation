@@ -6,13 +6,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
 
+        <link rel="stylesheet" type="text/css" href="assets/css/foundation/normalize.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="assets/css/foundation/foundation.css" media="screen">
         <link rel="stylesheet" type="text/css" href="assets/css/master.css" media="screen">
 
     </head>
     <body>
         <!-- Header Section Starts -->
-        <header>
-
+        <header style="margin: 50px auto; text-align: center;">
+            <a href="#" class="button flat">This is sample</a>
         </header>
         <!-- Header Section Ends -->
 
