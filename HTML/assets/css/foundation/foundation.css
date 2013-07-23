@@ -2972,30 +2972,30 @@ label.error {
   color: #c60f13;
 }
 
-/* line 39, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+/* line 49, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
 form.flat input[type="text"], form.flat textarea {
   background-color: #fcfcfc;
+  background-color: rgba(252, 252, 252, 0.2);
   -webkit-box-shadow: 2px 2px 2px 1px #222222;
   box-shadow: 2px 2px 2px 1px #222222;
   border: 0 none;
 }
-/* line 28, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+/* line 35, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
 form.flat input[type="text"]:focus, form.flat textarea:focus {
   background-color: white;
+  background-color: rgba(239, 239, 239, 0.2);
   outline: none;
   border: 0 none;
 }
-/* line 43, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+/* line 53, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
 form.flat .prefix, form.flat label.prefix {
-  background-color: #fcfcfc;
   -webkit-box-shadow: 2px 2px 2px 1px #222222;
   box-shadow: 2px 2px 2px 1px #222222;
   border: 0 none;
   border-right: 1px solid #dddddd;
 }
-/* line 49, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+/* line 62, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
 form.flat .postfix, form.flat label.postfix {
-  background-color: #fcfcfc;
   -webkit-box-shadow: 2px 2px 2px 1px #222222;
   box-shadow: 2px 2px 2px 1px #222222;
   border: 0 none;
