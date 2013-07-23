@@ -2968,11 +2968,18 @@ label.error {
   color: #c60f13;
 }
 
-/* line 18, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
-form.flat {
-  background-color: #eeeeee;
-  -webkit-box-shadow: 2px 2px 2px #222222;
-  box-shadow: 2px 2px 2px #222222;
+/* line 40, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+form.flat input[type="text"], form.flat textarea {
+  background-color: #f2f2f2;
+  -webkit-box-shadow: 2px 2px 2px 0px #222222;
+  box-shadow: 2px 2px 2px 0px #222222;
+  border: 0 none;
+}
+/* line 27, ../../scss/foundation/scss/foundation/components/_forms-flat.scss */
+form.flat input[type="text"]:focus, form.flat textarea:focus {
+  background-color: #fafafa;
+  outline: none;
+  border: 0 none;
 }
 
 /* Button Groups */
