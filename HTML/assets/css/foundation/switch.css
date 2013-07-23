@@ -1,35 +1,15 @@
 /* line 1, ../../scss/foundation/scss/switch.scss */
-html, body {
-  height: 100%;
-}
-
-/* line 2, ../../scss/foundation/scss/switch.scss */
-body {
-  background: linear-gradient(#f7f7f7, #e0e0e0);
-  margin: 0;
-}
-
-/* line 3, ../../scss/foundation/scss/switch.scss */
-.wrap {
-  position: relative;
-  width: 33.33%;
-  margin: -72px 0;
-  top: 50%;
-  float: left;
-}
-
-/* line 4, ../../scss/foundation/scss/switch.scss */
 label {
   margin: 1.5em auto;
 }
 
-/* line 5, ../../scss/foundation/scss/switch.scss */
+/* line 2, ../../scss/foundation/scss/switch.scss */
 input {
   position: absolute;
   left: -9999px;
 }
 
-/* line 10, ../../scss/foundation/scss/switch.scss */
+/* line 7, ../../scss/foundation/scss/switch.scss */
 .switch-ab {
   position: relative;
   display: block;
@@ -42,7 +22,7 @@ input {
   box-shadow: 0 0.07em 0.1em -0.1em rgba(0, 0, 0, 0.4) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7);
 }
 
-/* line 23, ../../scss/foundation/scss/switch.scss */
+/* line 20, ../../scss/foundation/scss/switch.scss */
 .switch-ab::before {
   position: absolute;
   content: '';
@@ -56,7 +36,7 @@ input {
   box-shadow: 0 0.1em 0.15em -0.05em rgba(255, 255, 255, 0.9) inset, 0 0.5em 0.3em -0.1em rgba(0, 0, 0, 0.25);
 }
 
-/* line 37, ../../scss/foundation/scss/switch.scss */
+/* line 34, ../../scss/foundation/scss/switch.scss */
 .switch-ab::after {
   position: absolute;
   content: '';
@@ -70,18 +50,18 @@ input {
   box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), -7.25em 0 0 -0.25em rgba(0, 0, 0, 0.3);
 }
 
-/* line 50, ../../scss/foundation/scss/switch.scss */
+/* line 47, ../../scss/foundation/scss/switch.scss */
 input:checked + .switch-ab::after {
   background: linear-gradient(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.1)), #44cc66;
   box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), -7.25em 0 0 -0.25em rgba(0, 0, 0, 0.12);
 }
 
-/* line 58, ../../scss/foundation/scss/switch.scss */
+/* line 55, ../../scss/foundation/scss/switch.scss */
 input:checked + .switch-ab::before {
   left: 3em;
 }
 
-/* line 65, ../../scss/foundation/scss/switch.scss */
+/* line 62, ../../scss/foundation/scss/switch.scss */
 .switch-bg {
   position: relative;
   display: block;
@@ -94,7 +74,7 @@ input:checked + .switch-ab::before {
   box-shadow: 0 0.07em 0.1em -0.1em rgba(0, 0, 0, 0.4) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7);
 }
 
-/* line 78, ../../scss/foundation/scss/switch.scss */
+/* line 75, ../../scss/foundation/scss/switch.scss */
 .switch-bg::after {
   position: absolute;
   content: '';
@@ -108,7 +88,7 @@ input:checked + .switch-ab::before {
   box-shadow: 0 0.1em 0.15em -0.05em rgba(255, 255, 255, 0.9) inset, 0 0.2em 0.2em -0.12em rgba(0, 0, 0, 0.5);
 }
 
-/* line 92, ../../scss/foundation/scss/switch.scss */
+/* line 89, ../../scss/foundation/scss/switch.scss */
 .switch-bg::before {
   position: absolute;
   content: '';
@@ -122,17 +102,17 @@ input:checked + .switch-ab::before {
   box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), 0 0 0 0 rgba(68, 204, 102, 0.7) inset;
 }
 
-/* line 105, ../../scss/foundation/scss/switch.scss */
+/* line 102, ../../scss/foundation/scss/switch.scss */
 input:checked + .switch-bg::before {
   box-shadow: 0 0.08em 0.15em -0.1em rgba(0, 0, 0, 0.5) inset, 0 0.05em 0.08em -0.01em rgba(255, 255, 255, 0.7), 3em 0 0 0 rgba(68, 204, 102, 0.7) inset;
 }
 
-/* line 112, ../../scss/foundation/scss/switch.scss */
+/* line 109, ../../scss/foundation/scss/switch.scss */
 input:checked + .switch-bg::after {
   left: 3em;
 }
 
-/* line 119, ../../scss/foundation/scss/switch.scss */
+/* line 116, ../../scss/foundation/scss/switch.scss */
 .switch-button {
   position: relative;
   display: block;
@@ -144,7 +124,7 @@ input:checked + .switch-bg::after {
   background: #ddd;
 }
 
-/* line 129, ../../scss/foundation/scss/switch.scss */
+/* line 126, ../../scss/foundation/scss/switch.scss */
 .switch-button::after {
   position: absolute;
   content: '';
@@ -158,7 +138,7 @@ input:checked + .switch-bg::after {
   box-shadow: 0 0 0 1.5em #f2f2f2 inset;
 }
 
-/* line 144, ../../scss/foundation/scss/switch.scss */
+/* line 141, ../../scss/foundation/scss/switch.scss */
 input:checked + .switch-button::after {
   width: 4em;
   height: 3em;
