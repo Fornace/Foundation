@@ -3,8 +3,8 @@
 //
 $include-html-custom-form-classes: $include-html-classes !default;
 
-$input-bg-color-flat: #f2f2f2 !default;
-$input-focus-bg-color-flat: darken(#fff, 2%) !default;
+$input-bg-color-flat: #fcfcfc !default;
+$input-focus-bg-color-flat: lighten($input-bg-color-flat, 5%) !default;
 $input-box-shadow-flat: 2px 2px 2px #222 !default;
 @mixin box-shadow-flat($h: 2px, $v: 2px, $a: 2px, $d: 0px, $color: #222, $inset: false) {
   @if $experimental {
@@ -21,7 +21,8 @@ $input-box-shadow-flat: 2px 2px 2px #222 !default;
 }
 @mixin flat_form($transparent: false) {
   background-color: $input-bg-color-flat;
-  @include box-shadow-flat;
+  @include box-shadow-flat($d: 1px);
+
   border: 0 none;
 
   &:focus {
@@ -29,9 +30,7 @@ $input-box-shadow-flat: 2px 2px 2px #222 !default;
     outline: none;
     border: 0 none;
   }
-  &.prefix {
 
-  }
 }
 
 form.flat {
@@ -39,5 +38,18 @@ form.flat {
 
   & textarea {
     @include flat_form;
+  }
+
+  & .prefix, & label.prefix {
+      background-color: $input-bg-color-flat;
+      @include box-shadow-flat($d: 1px);
+      border: 0 none;
+      border-right: 1px solid darken($input-bg-color-flat, 12%);
+  }
+  & .postfix, & label.postfix {
+      background-color: $input-bg-color-flat;
+      @include box-shadow-flat($d: 1px);
+      border: 0 none;
+      border-left: 1px solid darken($input-bg-color-flat, 12%);
   }
 }
