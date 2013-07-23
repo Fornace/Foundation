@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" type="text/css" href="assets/css/foundation/normalize.css" media="screen">
         <link rel="stylesheet" type="text/css" href="assets/css/foundation/foundation.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="assets/css/foundation/switch.css" media="screen">
         <link rel="stylesheet" type="text/css" href="assets/css/master.css" media="screen">
 
     </head>
@@ -15,6 +16,36 @@
         <!-- Header Section Starts -->
         <header style="margin: 50px auto; text-align: center;">
             <a href="#" class="button flat">This is sample</a>
+            <br style="clear: both; "/>
+            <br />
+            <br />
+            <div class="wrap">
+
+              <input type="checkbox" id="s1" />
+              <label class="switch-ab" for="s1"></label>
+
+              <input type="checkbox" id="s2" checked="" />
+              <label class="switch-ab" for="s2"></label>
+
+            </div><!--/wrap-->
+            <div class="wrap">
+
+              <input type="checkbox" id="s3" />
+              <label class="switch-bg" for="s3"></label>
+
+              <input type="checkbox" id="s4" checked="" />
+              <label class="switch-bg" for="s4"></label>
+
+            </div><!--/wrap-->
+            <div class="wrap">
+
+              <input type="checkbox" id="s5" />
+              <label class="switch-button" for="s5"></label>
+
+              <input type="checkbox" id="s6" checked="" />
+              <label class="switch-button" for="s6"></label>
+
+            </div><!--/wrap This is not mine, I swear. It's taken from codepen.io ;)-->
         </header>
         <!-- Header Section Ends -->
 
