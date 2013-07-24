@@ -6,3 +6,4 @@ Icon?
 Thumbs.db
 .espressostorage
 *.esproj
+HTML/assets/.sass-cache/*
