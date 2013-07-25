@@ -7,3 +7,4 @@ Thumbs.db
 .espressostorage
 *.esproj
 HTML/assets/.sass-cache/*
+HTML/assets/.sass-cache/*/*
