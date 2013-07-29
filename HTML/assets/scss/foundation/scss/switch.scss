@@ -10,8 +10,12 @@ label { margin:emCalc(24) auto }
 input { position:absolute; left:-9999px }
 
 
-@mixin switchButton() {
+@mixin switchButton($height: emCalc(48), $width: emCalc(88), $position: relative) {
+  position: $position;
+  display: block;
+  cursor: pointer;
 
+  @include border-radius(emCalc(24));
 }
 // **** ==== Slider v1: ==== **** //
 
