@@ -6995,6 +6995,82 @@ a.th {
     margin-top: -5px;
   }
 }
+/* line 44, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-bottom {
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  border-width: 15px 15px 0 15px;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  top: 100%;
+  left: 50%;
+  margin: 0 0 0 -15px;
+}
+/* line 39, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-bottom.diff-bg {
+  border-color: transparent;
+  border-top-color: #d7e7ea;
+}
+
+/* line 48, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-top {
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  border-width: 0 20px 20px 20px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+  bottom: 100%;
+  left: 50%;
+  margin: 0 0 0 -20px;
+}
+/* line 39, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-top.diff-bg {
+  border-color: transparent;
+  border-bottom-color: #85aeff;
+}
+
+/* line 52, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-right {
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  border-width: 25px 0 25px 25px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+  left: 100%;
+  top: 50%;
+  margin: -25px 0 0 0;
+}
+/* line 39, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-right.diff-bg {
+  border-color: transparent;
+  border-left-color: #991111;
+}
+
+/* line 56, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-left {
+  width: 0;
+  height: 0;
+  display: block;
+  position: absolute;
+  border-width: 20px 20px 20px 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  right: 100%;
+  top: 50%;
+  margin: -20px 0 0 0;
+}
+/* line 39, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+.section-arrow-left.diff-bg {
+  border-color: transparent;
+  border-right-color: rgba(170, 170, 170, 0.5);
+}
+
 @media only screen and (max-width: 767px) {
   /* line 128, ../../scss/foundation/scss/foundation/components/_dropdown.scss */
   .f-dropdown {

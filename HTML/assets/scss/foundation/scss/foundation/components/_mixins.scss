@@ -1,0 +1,58 @@
+@mixin arrow ($size:15px, $side:top, $position: 50%, $bgColor: #fff, $anotherBg: #d7e7ea ) {
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    @if $side == top {
+        border-width: $size $size 0 $size;
+        border-style: solid;
+        border-color: $bgColor transparent transparent transparent;
+        top: 100%;
+        left: $position;
+        margin: 0 0 0 -#{$size};
+    }
+    @else if $side == bottom {
+        border-width: 0 $size $size $size;
+        border-style: solid;
+        border-color: transparent transparent $bgColor transparent;
+        bottom: 100%;
+        left: $position;
+        margin: 0 0 0 -#{$size};
+    }
+    @else if $side == left {
+        border-width: $size 0 $size $size;
+        border-style: solid;
+        border-color: transparent transparent transparent $bgColor;
+        left: 100%;
+        top: $position;
+        margin: -#{$size} 0 0 0;
+    }
+    @else if $side == right {
+        border-width: $size $size $size 0;
+        border-style: solid;
+        border-color: transparent $bgColor transparent transparent;
+        right: 100%;
+        top: $position;
+        margin: -#{$size} 0 0 0;
+    }
+
+    &.diff-bg {
+       border-color: transparent;
+       border-#{$side}-color: $anotherBg;
+    }
+}
+.section-arrow-bottom {
+    @include arrow();
+}
+
+.section-arrow-top {
+    @include arrow($side: bottom, $size: 20px, $anotherBg: #85aeff)
+}
+
+.section-arrow-right {
+    @include arrow($side: left, $size: 25px, $anotherBg: #911);
+}
+
+.section-arrow-left {
+    @include arrow($side: right, $size: 20px, $anotherBg: rgba(#aaa, 0.5));
+}
