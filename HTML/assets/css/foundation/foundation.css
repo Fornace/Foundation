@@ -6995,7 +6995,7 @@ a.th {
     margin-top: -5px;
   }
 }
-/* line 44, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+/* line 56, ../../scss/foundation/scss/foundation/components/_mixins.scss */
 .section-arrow-bottom {
   width: 0;
   height: 0;
@@ -7014,7 +7014,7 @@ a.th {
   border-top-color: #d7e7ea;
 }
 
-/* line 48, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+/* line 60, ../../scss/foundation/scss/foundation/components/_mixins.scss */
 .section-arrow-top {
   width: 0;
   height: 0;
@@ -7033,7 +7033,7 @@ a.th {
   border-bottom-color: #85aeff;
 }
 
-/* line 52, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+/* line 64, ../../scss/foundation/scss/foundation/components/_mixins.scss */
 .section-arrow-right {
   width: 0;
   height: 0;
@@ -7052,7 +7052,7 @@ a.th {
   border-left-color: #991111;
 }
 
-/* line 56, ../../scss/foundation/scss/foundation/components/_mixins.scss */
+/* line 68, ../../scss/foundation/scss/foundation/components/_mixins.scss */
 .section-arrow-left {
   width: 0;
   height: 0;

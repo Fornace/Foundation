@@ -41,6 +41,18 @@
        border-#{$side}-color: $anotherBg;
     }
 }
+
+@mixin flatButton($fgColor: #fff, $bgColor: #121212, $crossBrowser: true) {
+    background-color: $bgColor;
+    color: $fgColor;
+    border: 0 none;
+    border-radius: 0;
+    @if $crossBrowser == true {
+        -webkit-box-shadow: none;
+    }
+    box-shadow: none;
+}
+
 .section-arrow-bottom {
     @include arrow();
 }
